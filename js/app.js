@@ -13,6 +13,7 @@ if(answer1 === 'yes'|| answer1 === 'y') {
 }else {
   alert('Sorry that was not a valid answer. Maybe you made a typo? Lets move on to the next question.');
 }
+console.log('the user put ' + answer1 + ' for if i have a dog.');
 
 var answer2 = prompt('Next question! Do you think I have a brother?').toLowerCase().trim();
 
@@ -23,6 +24,7 @@ if(answer2 === 'no' || answer2 === 'n') {
 }else {
   alert('Invalid Response, but let\'s move on.');
 }
+console.log('the user put ' + answer2 + ' for if I have a brother.')
 
 var answer3 = prompt('Do you think I\'ve spent my entire life in Washington?').toLowerCase().trim();
 
@@ -33,6 +35,7 @@ if(answer3 === 'yes' || answer3 === 'y') {
 }else {
   alert('Sorry that response is not valid, but let\'s just continue.');
 }
+console.log('the user put ' + answer3 + ' for whether I\'ve spent my entire life in Washington or not.');
 
 var answer4 = prompt('Do you think I enjoy playing golf?').toLowerCase().trim();
 
@@ -41,8 +44,9 @@ if(answer4 === 'yes' || answer4 === 'y') {
 }else if(answer4 === 'no' || answer4 === 'n') {
   alert('Sorry you\'re wrong, I\'ve golfed for over twenty years!');
 }else {
-  alert('I\'m sorry ' + userName + ' invalis answer, let\'s just continue.');
+  alert('I\'m sorry ' + userName + ' invalid answer, let\'s just continue.');
 }
+console.log('the user put ' + answer4 + ' for whether I enjoy playing golf or not.' );
 
 var answer5 = prompt('Do you think I would drive every day to class?').toLowerCase().trim();
 
@@ -53,3 +57,4 @@ if(answer5 === 'yes' || answer5 === 'y') {
 }else {
   alert('Sorry ' + userName + ' you\'ve enterd an invalid response, but thank you for playing my guessing game.');
 }
+console.log('the user put ' + answer5 + ' for whether I drive to class or not.');
