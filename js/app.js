@@ -58,3 +58,22 @@ if (answer5 === 'yes' || answer5 === 'y') {
 } else {
   alert('Sorry ' + userName + ' you\'ve enterd an invalid response, but thank you for playing my guessing game.');
 }
+var rightNum = 4;
+
+for(var i = 1; i <= 4; i++) {
+  var answer6 = prompt('Hey ' + userName + ' lets play a little game. I would like you to guess a number from 1 to 10. I\'ll give you 4 chances.');
+  var num = parseInt(answer6);
+  
+  var remain = 4 - i;
+
+  if(num > rightNum) {
+    alert('Sorry ' + userName + ' your guess is too high ' + remain.toString() + ' guesses left.');
+  } else if (num < rightNum) {
+    alert('Sorry ' + userName + ' your guess is too low ' + remain.toString() + ' guesses left.');
+  } else { 
+    alert('You are correct!');
+    break;
+  
+  }
+}
+  
