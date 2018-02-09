@@ -119,7 +119,7 @@ function question7(){
     } else if (i === 5) { // If user is out of guesses. Count will reach 6 attempts here.
       alert('I\'m so sorry you\'ve run out of guesses ' + userName + '. the right answers were Alabama and Virginia. Thanks for playing!' ); // Notify of reaching max guesses.
     } else if (answer7 === '' || !isNaN(parseInt(answer7))) {
-      alert('Sorry ' + userName + ' its a invalid answer. You have ' + (5 - i) + ' amount of tries left');
+      alert('Sorry ' + userName + ' its a invalid answer. You have ' + (5 - i) + ' more attempts');
     } else { 
       alert('Sorry ' + userName + ' incorrect. You have ' + (5 - i) + ' tries left');// Condition run for each wrong answer.
     }       
