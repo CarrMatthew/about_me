@@ -85,40 +85,43 @@ function question6() {
   for (var i = 0; i < 4; i++) {
     var answer6 = prompt('Hey ' + userName + ' lets play a little game. I would like you to guess a number from 1 to 10. I\'ll give you 4 chances.');
     var num = parseInt(answer6); // Variable 'num' used to store the answer given by user in prompt box. parseInt store what the user has entered.
-    console.log('The user input ' + num + ' as a guess to what number I selected');
-  
-    if (num > rightNum) { // If answer given is greater than rightNum(4).
+    
+    if (num > rightNum && num > 0 && num < 11) { // If answer given is greater than rightNum(4).
       alert('Sorry ' + userName + ' your guess is too high ' + (4 - (1 + i)) + ' guesses left.'); //remain.toString().Converts remaining guesses after each loop
-    } else if (num < rightNum) { // If answer given is less than rightNum(4).
+      console.log('The user input ' + num + ' as a guess to what number I selected was too high');
+    } else if (num < rightNum && num > 0 && num < 11) { // If answer given is less than rightNum(4).
       alert('Sorry ' + userName + ' your guess is too low ' + (4 - (i + 1)) + ' guesses left.');
-    } else if(num === rightNum) { 
+      console.log('The user input ' + num + ' as a guess to what number I selected was too low');
+    } else if (num === rightNum) { 
       alert('Great guess ' + userName + ' you are correct!');
+      console.log('The user input ' + num + ' as a guess to what number I selected was correct');
       count++;
       break;
     } else {
       alert('You have entered an invalid response!');
+      console.log('The user input ' + num + ' as a guess to what number I selected was invalid');
     } 
   }
 }
 question6();
 
 function question7(){
-  var states = ['virginia', 'alabama']; //array of correct answers.
+  var states = ['Virginia', 'Alabama']; //array of correct answers.
 
   for (var i = 0; i < 6; i++) { //Counter starts at (i) zero, and stops at 6, incrementing by one each iteration of the loop.
     var answer7 = prompt('Alright ' + userName + ' last question I promise. Can you guess which states I\'ve lived in besides Washington?').toLowerCase().trim();
     console.log('The user put ' + answer7 + ' for try number ' + (1 + i)); //log the answer for each guess,  incrementing  the guess by one for each entry to guess prompt.
   
-    if (answer7 === states[0] || answer7 === states[1]) { //If answer is in array index, either [0] or [1].
-      alert('You ' + userName + ' are correct, the answers were Virginia and Alabama'); // response to correct answer
+    if (answer7 === states[0].toLowerCase() || answer7 === states[1].toLowerCase()) { //If answer is in array index, either [0] or [1].
+      alert('You ' + userName + ' are correct, the answers were ' + states[0] + ' and ' + states[1]); // response to correct answer
       count++; // logs correct answers!
       break; //exit loop if conditions are met.
     } else if (i === 5) { // If user is out of guesses. Count will reach 6 attempts here.
-      alert('I\'m so sorry you\'ve run out of guesses ' + userName + '.' ); // Notify of reaching max guesses.
-    } else if (answer7=== '' || !isNaN(parseInt(answer7))) {
+      alert('I\'m so sorry you\'ve run out of guesses ' + userName + '. the right answers were Alabama and Virginia. Thanks for playing!' ); // Notify of reaching max guesses.
+    } else if (answer7 === '' || !isNaN(parseInt(answer7))) {
       alert('Sorry ' + userName + ' its a invalid answer. You have ' + (5 - i) + ' amount of tries left');
-    } else {
-      alert('Sorry ' + userName + ' incorrect. You have ' + (5 - i) + ' amount of tries left');// Condition run for each wrong answer.
+    } else { 
+      alert('Sorry ' + userName + ' incorrect. You have ' + (5 - i) + ' tries left');// Condition run for each wrong answer.
     }       
   }
 }
